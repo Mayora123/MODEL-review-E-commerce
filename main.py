@@ -3,8 +3,8 @@ import joblib
 import numpy as np
 
 # === LOAD MODEL & VECTORIZER ===
-MODEL_PATH = "model_svm.pkl"
-VECTORIZER_PATH = "vectorizer.pkl"
+MODEL_PATH = "model_linear_svm.pkl"
+VECTORIZER_PATH = "vectorizer_tfidf.pkl"
 
 try:
     model = joblib.load(MODEL_PATH)
