@@ -3,8 +3,15 @@ import joblib
 import numpy as np
 
 # === LOAD MODEL & VECTORIZER ===
-model = joblib.load("model_svm.pkl")
-vectorizer = joblib.load("vectorizer.pkl")
+MODEL_PATH = "model_svm.pkl"
+VECTORIZER_PATH = "vectorizer.pkl"
+
+try:
+    model = joblib.load(MODEL_PATH)
+    vectorizer = joblib.load(VECTORIZER_PATH)
+except:
+    st.error("❌ File model atau vectorizer tidak ditemukan. Pastikan sudah di-upload ke folder yang sama dengan main.py.")
+    st.stop()
 
 # === UI STREAMLIT ===
 st.set_page_config(page_title="Sentiment Review E-Commerce", layout="centered")
